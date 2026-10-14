@@ -1,0 +1,9 @@
+{
+    "geode": "2.0.0",
+    "id": "chesnoccc.rusifikator_gd",
+    "version": "1.0.0",
+    "name": "GD Русификатор",
+    "developer": "CheSnOCCC",
+    "description": "Первый тестовый мод для перевода Geometry Dash на русский язык.",
+    "dependencies": []
+}
