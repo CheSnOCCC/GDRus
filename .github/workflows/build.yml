@@ -7,18 +7,17 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - name: Windows
-            os: windows-latest
-
-    name: ${{ matrix.config.name }}
-    runs-on: ${{ matrix.config.os }}
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up CMake
+        uses: jwlawson/actions-setup-cmake@v2
+
       - name: Build Mod
-        uses: geode-sdk/build-geode-mod@main
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build . --config Release
