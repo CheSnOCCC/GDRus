@@ -7,17 +7,13 @@ on:
 
 jobs:
   build:
+    name: Build Windows Mod
     runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up CMake
-        uses: jwlawson/actions-setup-cmake@v2
-
       - name: Build Mod
-        run: |
-          mkdir build
-          cd build
-          cmake ..
-          cmake --build . --config Release
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          target: Win64
